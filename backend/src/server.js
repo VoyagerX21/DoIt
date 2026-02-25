@@ -75,13 +75,19 @@ app.use((_req, res) => {
 });
 app.use(errorHandler);
 
-connectDb()
-  .then(() => {
-    app.listen(env.port, env.host, () => {
-      console.log(`Server running at http://${env.host}:${env.port}`);
+// Export the app for serverless adapters (Vercel) and for tests.
+module.exports = app;
+
+// If this file is run directly (node src/server.js), connect DB and start the server.
+if (require.main === module) {
+  connectDb()
+    .then(() => {
+      app.listen(env.port, env.host, () => {
+        console.log(`Server running at http://${env.host}:${env.port}`);
+      });
+    })
+    .catch((error) => {
+      console.error('Failed to start server', error);
+      process.exit(1);
     });
-  })
-  .catch((error) => {
-    console.error('Failed to start server', error);
-    process.exit(1);
-  });
+}
