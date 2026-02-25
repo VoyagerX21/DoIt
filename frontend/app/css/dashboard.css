@@ -1,0 +1,94 @@
+.dashboard {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  background: #0f172a;
+  min-height: 100vh;
+  color: white;
+}
+
+.left {
+  width: 30%;
+  position: sticky;
+  top: 20px;
+}
+
+.right {
+  width: 70%;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.logout {
+  margin-bottom: 20px;
+  background: #ef4444;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: white;
+}
+
+button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  width: 100%;
+}
+
+.task-card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  cursor: grab;
+  transition: transform 0.2s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.todo {
+  background: #3b82f6;
+}
+.in-progress {
+  background: #f59e0b;
+}
+.done {
+  background: #10b981;
+}
+
+.error {
+  color: #ef4444;
+  margin-bottom: 20px;
+}
